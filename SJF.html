@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shortest Job First</title>
+    <link rel="stylesheet" href="demo.css">
+    <link href="https://fonts.googleapis.com/css2?family=Acme&family=Lobster&display=swap" rel="stylesheet">
+    <style>
+         .header{
+            height: 50px;
+            width: 100%;
+            display: flex; 
+            font-size: 17px;
+            color: #f5f5f7;
+            border: 0px solid red;
+            background-color: black;
+            margin: -8px;
+            width: 1920px;
+            flex-wrap: wrap;
+            /* position: fixed; */
+        }
+        .left {
+            font-family: 'Acme', sans-serif;
+            font-size: 25px;
+            margin: 10px 20px;
+            height: 40px;    
+            color: #f5f5f7;
+        }
+        .left a{
+            color: #f5f5f7;
+            text-decoration: none;
+        }
+        .mid{
+            margin: 15px 400px;
+            justify-content:center ;
+        }
+        .mid a{
+            margin: 0px 20px;
+            text-decoration: none;
+            color: #f5f5f7;
+        }
+      
+        .right{
+            margin: 15px 90px;
+        }
+        .right a{
+            text-decoration: none;
+            color: #f5f5f7;
+        }
+        a:hover{
+            color:gray;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div class="left">
+            <a href="index.html">OS</a>
+        </div>
+        <div class="mid">
+            <a href="FCFS.html">FCFS</a>
+            <a href="SJF.html">SJF</a>
+            <a href="RR.html">RR</a>
+            <a href="">HRRN</a> 
+            <!-- <a href="">SRTF</a>
+            <a href="">LRTF</a> -->
+        </div>
+        <div class="right">
+            <a href="about_us.html">about us</a>
+        </div>
+    </div>
+    <div></div>
+    <h1>SJF IMPLEMENTATION</h1>
+
+    <input type="number" id="process" placeholder="Enter Total process">
+    <button class="btn" id="add">ADD ROWS</button>
+    <br><br>
+
+    <div id="container">
+        <div class="item">Process No.</div>
+        <div class="item">Arrival time</div>
+        <div class="item">Burst time</div>
+
+        <div class="item ans" style="border: 2px solid black;">Completion Time</div>
+        <div class="item ans" style="border: 2px solid black;">Turn Around Time</div>
+        <div class="item ans" style="border: 2px solid black;">Waiting Time</div>
+
+    </div>
+
+    <div id="data">
+        <label class="cen">0</label>
+        <input type="number" class="cen">
+        <input type="number" class="cen">
+        <label class="ans"></label>
+        <label class="ans"></label>
+        <label class="ans"></label>
+    </div>
+    <br>
+    <button id="add_row" class="btn">Add Row</button>
+    <button id="delete_row" class="btn">Delete Row</button>
+    <br>
+    <button id="compute" class="btn">Compute</button>
+    <button id="reset" class="btn">Reset</button>
+
+    <br><br>
+
+    <!-- <button id="animate" class="btn">Animate</button> -->
+
+    <div id="animateAll">
+        <label class="start"></label>
+        <div class="animation">
+            <label class="process_animate">p0</label>
+        </div>
+    </div>
+
+    <div class="avg">
+        <span class="b">Average Turn Around Time </span>
+        <label class="a" id="avg_tat"></label>
+        <span class="b">Average Waiting Time </span>
+        <label class="a" id="avg_wat"></label>
+    </div>
+    
+</body>
+<script src="jquery.js"></script>
+<script type="module" src="sjf.js"></script>
+</html>
